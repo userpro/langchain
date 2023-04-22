@@ -3,7 +3,7 @@ from langchain.output_parsers.regex import RegexParser
 from langchain.prompts import PromptTemplate
 
 output_parser = RegexParser(
-    regex=r"(.*?)\nScore: (.*)",
+    regex=r"(.*?)\nScore: ([0-9]*)",
     output_keys=["answer", "score"],
 )
 
@@ -58,7 +58,7 @@ Context:
 {context}
 ---------
 Question: {question}
-Helpful Answer:"""
+Helpful Answer In Chinese:"""
 PROMPT = PromptTemplate(
     template=prompt_template,
     input_variables=["context", "question"],

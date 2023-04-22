@@ -52,7 +52,7 @@ DEFAULT_TEXT_QA_PROMPT_TMPL = (
     "{context_str}"
     "\n---------------------\n"
     "Given the context information and not prior knowledge, "
-    "answer the question: {question}\n"
+    "answer the question in chinese: {question}\n"
 )
 DEFAULT_TEXT_QA_PROMPT = PromptTemplate(
     input_variables=["context_str", "question"], template=DEFAULT_TEXT_QA_PROMPT_TMPL
