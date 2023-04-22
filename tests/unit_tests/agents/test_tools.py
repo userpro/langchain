@@ -2,8 +2,8 @@
 from datetime import datetime
 from functools import partial
 from typing import Optional, Type, Union
-import pydantic
 
+import pydantic
 import pytest
 from pydantic import BaseModel
 
@@ -85,7 +85,7 @@ def test_unschemafied_decorator_is_fine() -> None:
 
 
 def test_decorated_function_schema_equivalent() -> None:
-    """Test that a BaseTool without a schema is equivalent to the one manually created."""
+    """Test that a BaseTool without a schema meets expectations."""
 
     @tool
     def structured_tool_input(
