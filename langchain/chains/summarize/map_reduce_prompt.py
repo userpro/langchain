@@ -7,5 +7,5 @@ prompt_template = """Write a concise summary of the following:
 "{text}"
 
 
-CONCISE SUMMARY:"""
+CONCISE SUMMARY IN CHINESE:"""
 PROMPT = PromptTemplate(template=prompt_template, input_variables=["text"])

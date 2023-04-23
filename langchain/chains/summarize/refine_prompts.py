@@ -9,7 +9,7 @@ REFINE_PROMPT_TMPL = (
     "------------\n"
     "{text}\n"
     "------------\n"
-    "Given the new context, refine the original summary\n"
+    "Given the new context, refine the original summary in chinese\n"
     "If the context isn't useful, return the original summary."
 )
 REFINE_PROMPT = PromptTemplate(
@@ -24,5 +24,5 @@ prompt_template = """Write a concise summary of the following:
 "{text}"
 
 
-CONCISE SUMMARY:"""
+CONCISE SUMMARY IN CHINESE:"""
 PROMPT = PromptTemplate(template=prompt_template, input_variables=["text"])
