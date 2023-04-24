@@ -12,7 +12,7 @@ prompt_template = """Use the following pieces of context to answer the question 
 In addition to giving an answer, also return a score of how fully it answered the user's question. This should be in the following format:
 
 Question: [question here]
-Helpful Answer: [answer here in chinese]
+Helpful Answer: [answer here]
 Score: [score between 0 and 100]
 
 How to determine the score:

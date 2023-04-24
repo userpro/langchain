@@ -11,7 +11,7 @@ question_prompt_template = """Use the following portion of a long document to se
 Return any relevant text verbatim.
 {context}
 Question: {question}
-Relevant text in Chinese, if any:"""
+Relevant text, if any:"""
 QUESTION_PROMPT = PromptTemplate(
     template=question_prompt_template, input_variables=["context", "question"]
 )
@@ -59,7 +59,7 @@ QUESTION: {question}
 =========
 {summaries}
 =========
-FINAL ANSWER IN CHINESE:"""
+FINAL ANSWER:"""
 COMBINE_PROMPT = PromptTemplate(
     template=combine_prompt_template, input_variables=["summaries", "question"]
 )
