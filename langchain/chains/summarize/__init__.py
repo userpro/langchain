@@ -39,7 +39,7 @@ def _load_stuff_chain(
 
 def _load_map_reduce_chain(
     llm: BaseLanguageModel,
-    map_prompt: BasePromptTemplate = stuff_prompt.PROMPT,
+    map_prompt: BasePromptTemplate = map_reduce_prompt.PROMPT,
     combine_prompt: BasePromptTemplate = map_reduce_prompt.PROMPT,
     combine_document_variable_name: str = "text",
     map_reduce_document_variable_name: str = "text",
