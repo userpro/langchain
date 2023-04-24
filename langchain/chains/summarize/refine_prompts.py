@@ -9,8 +9,8 @@ REFINE_PROMPT_TMPL = (
     "------------\n"
     "{text}\n"
     "------------\n"
-    "Given the new context, refine the original summary chinese\n"
-    "If the context isn't useful, return the original summary."
+    "Given the new context, refine the original summary in chinese\n"
+    "If the context isn't useful, return the original summary in chinese."
 )
 REFINE_PROMPT = PromptTemplate(
     input_variables=["existing_answer", "text"],
