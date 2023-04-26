@@ -90,11 +90,14 @@ class RefineDocumentsChain(BaseCombineDocumentsChain):
         inputs = self._construct_initial_inputs(docs, **kwargs)
         res = self.initial_llm_chain.predict(**inputs)
         refine_steps = [res]
+        step = 1
         for doc in docs[1:]:
+            print(f"\n[progress: {step}/{len(docs)}]\n")
             base_inputs = self._construct_refine_inputs(doc, res)
             inputs = {**base_inputs, **kwargs}
             res = self.refine_llm_chain.predict(**inputs)
             refine_steps.append(res)
+            step += 1
         return self._construct_result(refine_steps, res)
 
     async def acombine_docs(
