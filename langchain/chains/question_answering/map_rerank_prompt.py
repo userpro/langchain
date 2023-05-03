@@ -3,7 +3,7 @@ from langchain.output_parsers.regex import RegexParser
 from langchain.prompts import PromptTemplate
 
 output_parser = RegexParser(
-    regex=r"(.*?)\nScore: (.*)",
+    regex=r"([\s\S]*)\nScore: ([0-9]*)",
     output_keys=["answer", "score"],
 )
 
@@ -12,7 +12,7 @@ prompt_template = """Use the following pieces of context to answer the question 
 In addition to giving an answer, also return a score of how fully it answered the user's question. This should be in the following format:
 
 Question: [question here]
-Helpful Answer: [answer here]
+Helpful Answer: [answer here in chinese]
 Score: [score between 0 and 100]
 
 How to determine the score:
@@ -28,7 +28,7 @@ Context:
 Apples are red
 ---------
 Question: what color are apples?
-Helpful Answer: red
+Helpful Answer: 红色
 Score: 100
 
 Example #2
@@ -38,7 +38,7 @@ Context:
 it was night and the witness forgot his glasses. he was not sure if it was a sports car or an suv
 ---------
 Question: what type was the car?
-Helpful Answer: a sports car or an suv
+Helpful Answer: 跑车或越野车
 Score: 60
 
 Example #3
@@ -48,7 +48,7 @@ Context:
 Pears are either red or orange
 ---------
 Question: what color are apples?
-Helpful Answer: This document does not answer the question
+Helpful Answer: 本文档无法回答该问题
 Score: 0
 
 Begin!
